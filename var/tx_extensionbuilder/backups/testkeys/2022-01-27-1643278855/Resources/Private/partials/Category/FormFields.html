@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="id">
+	<f:translate key="tx_testkeys_domain_model_category.id" />
+</label><br />
+	<f:form.textfield property="id" id="id" /><br />
+<label for="name">
+	<f:translate key="tx_testkeys_domain_model_category.name" />
+</label><br />
+	<f:form.textfield property="name" id="name" /><br />
+<label for="description">
+	<f:translate key="tx_testkeys_domain_model_category.description" />
+</label><br />
+	<f:form.textarea property="description" id="description" cols="40" rows="15" /><br />
+<label for="createdAt">
+	<f:translate key="tx_testkeys_domain_model_category.created_at" />
+</label><br />
+	<f:form.textfield property="createdAt" id="createdAt" value="{category.createdAt->f:format.date()}" /><br />
+<label for="updatedAt">
+	<f:translate key="tx_testkeys_domain_model_category.updated_at" />
+</label><br />
+	<f:form.textfield property="updatedAt" id="updatedAt" value="{category.updatedAt->f:format.date()}" /><br />
+<label for="delatedAt">
+	<f:translate key="tx_testkeys_domain_model_category.delated_at" />
+</label><br />
+	<f:form.textfield property="delatedAt" id="delatedAt" value="{category.delatedAt->f:format.date()}" /><br />
+</html>

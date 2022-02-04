@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:testkeys/Resources/Private/Language/locallang_db.xlf" date="2022-01-27T11:41:50Z" product-name="testkeys">
+		<header/>
+		<body>
+			<trans-unit id="tx_testkeys_domain_model_produit" resname="tx_testkeys_domain_model_produit">
+				<source>Produit</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_produit.name" resname="tx_testkeys_domain_model_produit.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_produit.prix" resname="tx_testkeys_domain_model_produit.prix">
+				<source>Prix</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_produit.stock" resname="tx_testkeys_domain_model_produit.stock">
+				<source>Stock</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_produit.description" resname="tx_testkeys_domain_model_produit.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_produit.slug" resname="tx_testkeys_domain_model_produit.slug">
+				<source>Slug</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_produit.category" resname="tx_testkeys_domain_model_produit.category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_category" resname="tx_testkeys_domain_model_category">
+				<source>Category</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_category.name" resname="tx_testkeys_domain_model_category.name">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_category.description" resname="tx_testkeys_domain_model_category.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="tx_testkeys_domain_model_category.produit" resname="tx_testkeys_domain_model_category.produit">
+				<source>Produit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

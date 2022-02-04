@@ -1,0 +1,97 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/List.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+			<div class="news-list-view" id="news-container-{contentObjectData.uid}">
+				<f:if condition="{settings.hidePagination}">
+					<f:then>
+						<f:for each="{news}" as="newsItem" iteration="iterator">
+							<f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+							
+						</f:for>
+					</f:then>
+					<f:else>
+                        <f:if condition="{settings.list.paginate.insertAbove}">
+                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                        </f:if>
+                        <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                            <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
+                        </f:for>
+                        <f:if condition="{settings.list.paginate.insertBelow}">
+                            <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                        </f:if>
+					</f:else>
+				</f:if>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="no-news-found">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+	<!-- image preview  -->
+	<f:for each="{news}" as="newsItem" iteration="iterator">
+		<!-- header -->
+		<f:if condition="{newsItem.mediaPreviews}">
+			<!-- media preview element -->
+			<f:then>
+				<div class="news-img-wrap">
+					<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+						<f:alias map="{mediaElement: newsItem.mediaPreviews.0}">
+							<f:if condition="{mediaElement.originalResource.type} == 2">
+								<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+							</f:if>
+							<f:if condition="{mediaElement.originalResource.type} == 4">
+								<f:render partial="Detail/MediaVideo" arguments="{mediaElement: mediaElement}"/>
+							</f:if>
+							<f:if condition="{mediaElement.originalResource.type} == 5">
+								<f:image image="{mediaElement}" title="{mediaElement.originalResource.title}" alt="{mediaElement.originalResource.alternative}" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+							</f:if>
+						</f:alias>
+					</n:link>
+				</div>
+			</f:then>
+			<f:else>
+				<f:if condition="{settings.displayDummyIfNoMedia}">
+					<div class="news-img-wrap">
+						<span class="no-media-element">
+							<n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}">
+								<f:image src="{settings.list.media.dummyImage}" title="" alt="" loading="{settings.list.media.image.lazyLoading}" maxWidth="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.maxWidth)}" maxHeight="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else: settings.list.media.image.maxHeight)}"/>
+							</n:link>
+						</span>
+					</div>
+				</f:if>
+			</f:else>
+		</f:if>
+	</f:for>
+		<!-- teaser -->
+		<div class="teaser-text">
+			<n:removeMediaTags>
+			<f:if condition="{newsItem.teaser}">
+				<f:then>
+					<div itemprop="description">{newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+				</f:then>
+				<f:else>
+					<div itemprop="description">{newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}', respectWordBoundaries:'1') -> f:format.html()}</div>
+				</f:else>
+			</f:if>
+			</n:removeMediaTags>
+	
+			<n:link newsItem="{newsItem}" settings="{settings}" class="more" title="{newsItem.title}">
+				<f:translate key="more-link"/>
+			</n:link>
+		</div>
+	
+</f:section>
+</html>

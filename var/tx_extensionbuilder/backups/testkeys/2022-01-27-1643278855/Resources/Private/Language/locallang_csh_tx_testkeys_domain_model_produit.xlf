@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="EXT:testkeys/Resources/Private/Language/locallang_csh_tx_testkeys_domain_model_produit.xlf" date="2022-01-27T08:29:56Z" product-name="testkeys">
+		<header/>
+		<body>
+			<trans-unit id="id.description" resname="id.description">
+				<source>id</source>
+			</trans-unit>
+			<trans-unit id="name.description" resname="name.description">
+				<source>name</source>
+			</trans-unit>
+			<trans-unit id="prix.description" resname="prix.description">
+				<source>prix</source>
+			</trans-unit>
+			<trans-unit id="stock.description" resname="stock.description">
+				<source>stock</source>
+			</trans-unit>
+			<trans-unit id="description.description" resname="description.description">
+				<source>description</source>
+			</trans-unit>
+			<trans-unit id="slug.description" resname="slug.description">
+				<source>slug</source>
+			</trans-unit>
+			<trans-unit id="add_date.description" resname="add_date.description">
+				<source>addDate</source>
+			</trans-unit>
+			<trans-unit id="update_date.description" resname="update_date.description">
+				<source>updateDate</source>
+			</trans-unit>
+			<trans-unit id="delate_date.description" resname="delate_date.description">
+				<source>delateDate</source>
+			</trans-unit>
+			<trans-unit id="category.description" resname="category.description">
+				<source>category</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

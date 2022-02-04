@@ -1,0 +1,14 @@
+plugin.tx_testkeys_products {
+    view {
+        # cat=plugin.tx_testkeys_products/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:testkeys/Resources/Private/Templates/
+        # cat=plugin.tx_testkeys_products/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:testkeys/Resources/Private/Partials/
+        # cat=plugin.tx_testkeys_products/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:testkeys/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_testkeys_products//a; type=string; label=Default storage PID
+        storagePid =
+    }
+}

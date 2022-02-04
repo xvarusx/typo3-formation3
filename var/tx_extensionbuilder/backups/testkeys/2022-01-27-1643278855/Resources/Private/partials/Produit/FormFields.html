@@ -1,0 +1,38 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<label for="id">
+	<f:translate key="tx_testkeys_domain_model_produit.id" />
+</label><br />
+	<f:form.textfield property="id" id="id" /><br />
+<label for="name">
+	<f:translate key="tx_testkeys_domain_model_produit.name" />
+</label><br />
+	<f:form.textfield property="name" id="name" /><br />
+<label for="prix">
+	<f:translate key="tx_testkeys_domain_model_produit.prix" />
+</label><br />
+	<f:form.textfield property="prix" id="prix" /><br />
+<label for="stock">
+	<f:translate key="tx_testkeys_domain_model_produit.stock" />
+</label><br />
+	<f:form.textfield property="stock" id="stock" /><br />
+<label for="description">
+	<f:translate key="tx_testkeys_domain_model_produit.description" />
+</label><br />
+	<f:form.textfield property="description" id="description" /><br />
+<label for="slug">
+	<f:translate key="tx_testkeys_domain_model_produit.slug" />
+</label><br />
+	<f:form.textfield property="slug" id="slug" /><br />
+<label for="addDate">
+	<f:translate key="tx_testkeys_domain_model_produit.add_date" />
+</label><br />
+	<f:form.textfield property="addDate" id="addDate" value="{produit.addDate->f:format.date()}" /><br />
+<label for="updateDate">
+	<f:translate key="tx_testkeys_domain_model_produit.update_date" />
+</label><br />
+	<f:form.textfield property="updateDate" id="updateDate" value="{produit.updateDate->f:format.date()}" /><br />
+<label for="delateDate">
+	<f:translate key="tx_testkeys_domain_model_produit.delate_date" />
+</label><br />
+	<f:form.textfield property="delateDate" id="delateDate" value="{produit.delateDate->f:format.date()}" /><br />
+</html>
